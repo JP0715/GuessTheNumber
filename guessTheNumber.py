@@ -3,14 +3,15 @@ from random import randint
 
 guessesTaken = 0
 
-print("Enter a number from 1-10. You get 3 guesses.")
+print("Enter a number from 1-10. You get 3 guesses. Enter 'x' to quit.")
 
 number = str(randint(1, 11))
 
 while guessesTaken < 4:
     guess = str(input("Enter a guess: "))
     guessesTaken += 1
-
+    if guess == 'x':
+        break
     if guess < number:
         print("Too low.")
     if guess > number:
@@ -24,6 +25,7 @@ if guess == number:
     
 if guess != number:
     print('The number was ' + str(number) + '.')
+
 
 
 
